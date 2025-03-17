@@ -1,0 +1,11 @@
+window.onload = function() {
+  var _userAgent = navigator.userAgent;
+  var _isLowerIE = _userAgent.indexOf("compatible") > -1 && _userAgent.indexOf("MSIE") > -1;
+  if(_userAgent.indexOf('Trident') > -1 && _isLowerIE){
+    var _div = document.createElement('div');
+    _div.innerHTML = '您当前使用的浏览器版本过低，可能会出现界面显示异常或功能无法正常使用等问题，建议您升级或更换浏览器';
+    _div.setAttribute('class','lowerIeMention')
+    document.body.appendChild(_div)
+    document.getElementsByTagName('header')[0].style.top = '30px'
+  }
+}
